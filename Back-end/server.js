@@ -2,7 +2,7 @@
 require('dotenv').config();
 let express = require('express');
 let bodyParser = require('body-parser');
-// let router = require('./routes');
+let router = require('./routes');
 let cors = require('cors');
 let morgan = require('morgan');
 const path = require('path');
@@ -24,10 +24,10 @@ server.use(morgan('dev'));
 server.get('/', (request, response) => {
   response.send("Bienvenue sur le Carnet d'Adresse du Marsupilami");
 });
-// server.use('/api/', router);
+server.use('/api/', router);
 
 // Récupération des images depuis le dossier 'images'
-// server.use('/images', express.static((__dirname, 'images')));
+server.use('/images', express.static((__dirname, 'images')));
 
 // Lancement du serveur
 let port = process.env.PORT || 8080;
