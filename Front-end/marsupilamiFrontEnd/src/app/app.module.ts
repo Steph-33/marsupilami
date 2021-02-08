@@ -1,20 +1,27 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { HttpClientModule } from '@angular/common/http';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { ItemsComponent } from './modules/application/items/items.component';
-import { ItemsModule } from './modules/application/items/items.module';
+import { UserComponent } from './user/user.component';
+import { HomeComponent } from './home/home.component';
+import { FriendsComponent } from './friends/friends.component';
+
 
 @NgModule({
   declarations: [
     AppComponent,
-    ItemsComponent
+    UserComponent,
+    HomeComponent,
+    FriendsComponent,
+
   ],
   imports: [
     BrowserModule,
+    HttpClientModule,
     AppRoutingModule,
-    ItemsModule
+
   ],
   providers: [],
   bootstrap: [AppComponent]
